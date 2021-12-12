@@ -10,7 +10,7 @@ require "csv"
    
    puts "メモしたい内容を記入してください"
    puts "完了後、Ctrl + Dを押します"
-   memo_value = gets.to_s.chomp
+   memo_value = $stdin.read
   
    CSV.open("#{csv_name}.csv","w") do |text|
     text << ["#{memo_value}"]
@@ -22,7 +22,7 @@ require "csv"
    
    puts "編集内容を入力してください"
    puts "完了後、Ctrl + Dを押します"
-   edit_value = gets.to_s.chomp
+   edit_value = $stdin.read
   
    CSV.open("#{file_name}.csv","a") do |edit|
     edit << ["#{edit_value}"]
